@@ -1,0 +1,749 @@
+
+
+/* 기본 설정 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fff5f9;
+  color: #684d59;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+section {
+  scroll-margin-top: 70px;
+}
+
+h2 {
+  font-size: clamp(30px, 5vw, 42px);
+  color: #d86d9d;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  color: #d979a0;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.section-subtitle {
+  color: #ad8193;
+  margin-bottom: 50px;
+}
+
+/* 상단 메뉴 */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255,255,255,0.92);
+  box-shadow: 0 2px 15px #00000008;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #e978a4;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: #a46b83;
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: #ff79aa;
+}
+
+/* 메인 화면 */
+.hero {
+  min-height: 100vh;
+  padding: 120px 10% 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  background: linear-gradient(135deg, #fff1f7, #ffdce9);
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero h1 {
+  font-size: clamp(60px, 9vw, 100px);
+  color: #ce6292;
+  margin-bottom: 25px;
+  animation: titleAppear 1s ease both;
+}
+
+.description {
+  font-size: 20px;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background: #ed8eb3;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #d76b99;
+  transform: translateY(-4px);
+}
+
+/* 메인 사진 */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 400px;
+  height: 470px;
+  object-fit: cover;
+  border-radius: 45% 45% 25px 25px;
+  box-shadow: 0 20px 50px #ed8eb355;
+  animation: photoAppear 1.2s ease both;
+}
+
+.photo-sticker {
+  position: absolute;
+  right: 0;
+  bottom: 25px;
+  padding: 14px 24px;
+  border-radius: 30px;
+  background: white;
+  color: #df78a3;
+  font-weight: bold;
+  box-shadow: 0 6px 20px #00000012;
+  transform: rotate(-8deg);
+}
+
+/* 기본 프로필 */
+.about {
+  padding: 130px 10%;
+  text-align: center;
+  background: white;
+}
+
+.profile-info {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.info {
+  width: 260px;
+  padding: 45px 20px;
+  background: #fff4f8;
+  border-radius: 25px;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.info:hover {
+  background: #ffe4ee;
+  box-shadow: 0 12px 25px #ed8eb32b;
+}
+
+.info span {
+  font-size: 40px;
+}
+
+.info h3 {
+  margin: 20px 0 10px;
+  color: #d86d9d;
+}
+
+.info p {
+  line-height: 1.7;
+}
+
+/* 성격 소개 */
+.intro {
+  padding: 130px 15%;
+  text-align: center;
+  background: #ffe8f1;
+}
+
+.intro-content {
+  max-width: 750px;
+  margin: auto;
+}
+
+.intro p:not(.subtitle) {
+  font-size: 19px;
+  line-height: 2;
+  margin-top: 25px;
+}
+
+/* TMI 소개 */
+.tmi {
+  padding: 130px 10%;
+  text-align: center;
+  background: #fff7fa;
+}
+
+.tmi-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.tmi-item {
+  width: 220px;
+  padding: 35px 20px;
+  background: white;
+  border: 2px solid #ffe1ec;
+  border-radius: 25px;
+  box-shadow: 0 8px 25px #ed8eb31a;
+  transition: box-shadow 0.3s, background 0.3s;
+}
+
+.tmi-item:hover {
+  background: #fff0f6;
+  box-shadow: 0 12px 30px #ed8eb333;
+}
+
+.tmi-item span {
+  font-size: 40px;
+}
+
+.tmi-item h3 {
+  color: #d86d9d;
+  margin: 18px 0 12px;
+}
+
+.tmi-item p {
+  color: #947282;
+}
+
+/* 폴라로이드 갤러리 */
+.gallery {
+  padding: 130px 10%;
+  text-align: center;
+  background: white;
+}
+
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.polaroid {
+  width: 270px;
+  background: white;
+  padding: 14px 14px 25px;
+  box-shadow: 0 10px 30px #00000020;
+  --rotation: -5deg;
+  rotate: var(--rotation);
+  transition: rotate 0.4s, scale 0.4s;
+}
+
+.polaroid:nth-child(2) {
+  --rotation: 4deg;
+}
+
+.polaroid:nth-child(3) {
+  --rotation: -3deg;
+}
+
+.polaroid img {
+  display: block;
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.polaroid p {
+  margin-top: 22px;
+  color: #bb7894;
+  font-size: 18px;
+  font-family: cursive;
+}
+
+.polaroid:hover {
+  rotate: 0deg;
+  scale: 1.07;
+  z-index: 2;
+}
+
+/* 마지막 인사 */
+.ending {
+  padding: 130px 10%;
+  text-align: center;
+  background: linear-gradient(135deg, #ffe0eb, #fff1f7);
+}
+
+.ending p {
+  font-size: 19px;
+  margin: 25px 0 35px;
+  line-height: 1.8;
+}
+
+footer {
+  background: #ffe0eb;
+  padding: 30px;
+  text-align: center;
+  color: #b46b8b;
+}
+
+/* 하트 애니메이션 */
+.hearts {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.heart {
+  position: absolute;
+  bottom: -50px;
+  color: #ff83ae;
+  opacity: 0;
+  user-select: none;
+  animation: floatHeart linear forwards;
+}
+
+@keyframes floatHeart {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.75;
+  }
+
+  85% {
+    opacity: 0.75;
+  }
+
+  100% {
+    transform: translateY(-115vh) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+/* 스크롤 애니메이션 */
+.reveal,
+.reveal-left,
+.reveal-right {
+  opacity: 0;
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal {
+  transform: translateY(45px);
+}
+
+.reveal-left {
+  transform: translateX(-65px);
+}
+
+.reveal-right {
+  transform: translateX(65px);
+}
+
+.reveal.active,
+.reveal-left.active,
+.reveal-right.active {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* 메인 등장 효과 */
+@keyframes titleAppear {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes photoAppear {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 모바일 화면 */
+@media (max-width: 768px) {
+  nav {
+    padding: 18px 5%;
+  }
+
+  .logo {
+    font-size: 19px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 10px;
+  }
+
+  .hero {
+    flex-direction: column-reverse;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 6% 75px;
+    gap: 35px;
+  }
+
+  .hero h1 {
+    font-size: 60px;
+  }
+
+  .description {
+    font-size: 17px;
+  }
+
+  .hero-image img {
+    max-width: 280px;
+    height: 330px;
+  }
+
+  .photo-sticker {
+    right: -5px;
+    bottom: 15px;
+  }
+
+  .about,
+  .tmi,
+  .gallery {
+    padding: 90px 6%;
+  }
+
+  .intro {
+    padding: 90px 8%;
+  }
+
+  .intro p:not(.subtitle) {
+    font-size: 16px;
+  }
+
+  .ending {
+    padding: 100px 8%;
+  }
+
+  .gallery-container {
+    gap: 45px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal,
+  .reveal-left,
+  .reveal-right {
+    opacity: 1;
+    transform: none;
+  }
+
+  .heart {
+    display: none;
+  }
+}
+.tmi {
+  background: #ffe0ed !important;
+  text-align: center !important;
+}
+
+.tmi-container {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 25px !important;
+}
+
+.polaroid {
+  background: white !important;
+  padding: 20px !important;
+  box-shadow: 0 10px 30px #00000030 !important;
+}
+
+/* Secret TMI */
+.secret-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 230px));
+  justify-content: center;
+  gap: 25px;
+  margin: 0 auto;
+  perspective: 1000px;
+}
+
+.secret-card {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  border: none;
+  padding: 0;
+  border-radius: 24px;
+  background: transparent;
+  cursor: pointer;
+  perspective: 1000px;
+  font-family: inherit;
+}
+
+.secret-inner {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.65s ease;
+  transform-style: preserve-3d;
+}
+
+.secret-card.flipped .secret-inner {
+  transform: rotateY(180deg);
+}
+
+.secret-front,
+.secret-back {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px;
+  border-radius: 24px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow: 0 8px 25px #de8dab30;
+}
+
+.secret-front {
+  background: white;
+  border: 2px solid #ffe1ec;
+  color: #86596f;
+}
+
+.secret-back {
+  background: #f9cfe1;
+  color: #a74876;
+  transform: rotateY(180deg);
+}
+
+.secret-icon {
+  font-size: 38px;
+  color: #e681aa;
+}
+
+.secret-card strong {
+  font-size: 16px;
+}
+
+.secret-card small {
+  font-size: 12px;
+  color: #b98199;
+}
+
+.secret-card:focus-visible {
+  outline: 3px solid #d86d9d;
+  outline-offset: 5px;
+}
+
+.secret-card:not(.flipped):hover .secret-front {
+  background: #fff9fc;
+  box-shadow: 0 12px 30px #de8dab50;
+}
+
+@media (max-width: 480px) {
+  .secret-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .secret-card {
+    height: 170px;
+  }
+
+  .secret-card strong {
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .secret-inner {
+    transition: none;
+  }
+}
+
+/* Secret TMI 카드 디자인 수정 */
+.tmi .secret-container {
+  display: grid !important;
+  grid-template-columns: repeat(2, 250px) !important;
+  justify-content: center !important;
+  gap: 30px !important;
+  max-width: 600px;
+  margin: 40px auto 0;
+}
+
+.tmi .secret-card {
+  display: block !important;
+  position: relative;
+  width: 250px;
+  height: 200px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  perspective: 1000px;
+  font-family: inherit;
+}
+
+.tmi .secret-inner {
+  display: block !important;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease;
+}
+
+.tmi .secret-card.flipped .secret-inner {
+  transform: rotateY(180deg);
+}
+
+.tmi .secret-front,
+.tmi .secret-back {
+  position: absolute !important;
+  inset: 0;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  border-radius: 25px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow: 0 8px 25px #e69bbb40;
+  text-align: center;
+}
+
+.tmi .secret-front {
+  background: white;
+  color: #a55c7d;
+}
+
+.tmi .secret-back {
+  background: #f9cfe1;
+  color: #9c416c;
+  transform: rotateY(180deg);
+}
+
+.tmi .secret-icon {
+  display: block;
+  font-size: 40px;
+  color: #e681aa;
+}
+
+.tmi .secret-card strong {
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.tmi .secret-card small {
+  font-size: 12px;
+  color: #ba829b;
+}
+
+@media (max-width: 600px) {
+  .tmi .secret-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+
+  .tmi .secret-card {
+    width: 100%;
+    height: 190px;
+  }
+
+  .tmi .secret-card strong {
+    font-size: 14px;
+  }
+}
+.secret-card {
+  background: transparent !important;
+  width: 250px !important;
+  height: 200px !important;
+}
+
+.secret-front {
+  background: #fffafd !important;
+  border: 2px solid #f8c8df !important;
+  color: #b76b91 !important;
+}
+
+.secret-back {
+  background: #f9d5e5 !important;
+  color: #a64d7b !important;
+}
+.polaroid:nth-child(4) {
+  --rotation: 5deg;
+}
+
+.polaroid:nth-child(5) {
+  --rotation: -4deg;
+}
